@@ -47,17 +47,17 @@ let grab = {
     end: 0,
 }
 
-pages.addEventListener("mousedown", (event) => {
-    let isSliderPage = event.target.classList.contains("slider__pages__page");
-    if (isSliderPage && event.buttons == 1) {
-        grab.start = event.clientX;
-    }
-})
-
-pages.addEventListener("click", (event) => {
+function grabStart(event){
     let isSliderPage = event.target.classList.contains("slider__pages__page");
     if (isSliderPage) {
-        grab.end = event.clientX;
+        grab.start = event.clientX || event.changedTouches[0].clientX;
+    }
+}
+
+function grabEnd(event){
+    let isSliderPage = event.target.classList.contains("slider__pages__page");
+    if (isSliderPage) {
+        grab.end = event.clientX || event.changedTouches[0].clientX;
         let distance = grab.end - grab.start;
         let breakpoint = slider.clientWidth / 4; // 25% of elem
 
@@ -71,7 +71,12 @@ pages.addEventListener("click", (event) => {
 
         goToPage(slider.currentPage);
     }
-})
+}
+
+pages.addEventListener("mousedown", grabStart);
+pages.addEventListener("touchstart", grabStart);
+pages.addEventListener("click", grabEnd)
+pages.addEventListener("touchend", grabEnd);
 
 // Go to desired page
 function goToPage(page) {
