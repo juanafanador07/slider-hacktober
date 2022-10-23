@@ -1,0 +1,89 @@
+.slider{
+    position: relative;
+    overflow: hidden;
+    user-select: none; /*Optional*/
+
+    width: 80%;  /* Styles for demostration */
+    margin: 0 auto;  /* Styles for demostration */
+}
+
+.slider__next, .slider__prev{
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+
+    background: white; /* Styles for demostration */
+    width: 2em; /* Styles for demostration */
+    height: 3em; /* Styles for demostration */
+    display: flex; /* Styles for demostration */
+    align-items: center; /* Styles for demostration */
+    justify-content: center; /* Styles for demostration */
+}
+.slider__next {
+    right: .5em; /* Styles for demostration */
+}
+
+.slider__prev {
+    left: .5em; /* Styles for demostration */
+}
+
+.slider__dots {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    translate: -50% 0;
+    left: 50%;
+
+    bottom: 5px; /* Styles for demostration */
+}
+
+.slider__dots__dot {
+    width: .6em; /* Styles for demostration */
+    height: .6em; /* Styles for demostration */
+    margin: .5em; /* Styles for demostration */
+    background-color: #f8f9fa; /* Styles for demostration */
+    border-radius: 50%; /* Styles for demostration */
+    border: .1em solid #6c757d; /* Styles for demostration */
+}
+
+.slider__dots__dot--active {
+    background-color: #6c757d; /* Styles for demostration */
+}
+
+.slider__pages{
+    display: flex;
+    transition: 1s;
+}
+
+.slider__pages__page{
+    flex-grow: 1;
+}
+
+.slider__pages__page{
+    display: flex; /* Styles for demostration */
+    justify-content: center; /* Styles for demostration */
+    align-items: center; /* Styles for demostration */
+    padding: 1em; /* Styles for demostration */
+    font-size: 4em; /* Styles for demostration */
+    font-weight: bold; /* Styles for demostration */
+}
+
+.slider__pages__page:nth-child(1){
+    background: coral; /* Styles for demostration */
+}
+.slider__pages__page:nth-child(2){
+    background: cadetblue; /* Styles for demostration */
+}
+.slider__pages__page:nth-child(3){
+    background: yellowgreen; /* Styles for demostration */
+}
+.slider__pages__page:nth-child(4){
+    background: wheat; /* Styles for demostration */
+}
+.slider__pages__page:nth-child(5){
+    background: violet; /* Styles for demostration */
+}
+.slider__pages__page:nth-child(6){
+    background: turquoise; /* Styles for demostration */
+}
